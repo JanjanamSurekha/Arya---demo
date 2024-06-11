@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <title>Order Now</title>
+            <script>
+                function validation()
+                 {
+                if (isEmpty(document.getElementById('data_2').value.trim())) {
+                alert('First name is required!');
+                return false;
+                }
+
+                if (isEmpty(document.getElementById('data_3').value.trim())) {
+                alert('Last name is required!');
+                return false;
+                }
+
+                if (isEmpty(document.getElementById('data_4').value.trim())) {
+                alert('Phone is required!');
+                return false;
+                }
+
+                if (isEmpty(document.getElementById('data_5').value.trim())) {
+                alert('Email is required!');
+                return false;
+                }
+
+                if (!validateEmail(document.getElementById('data_5').value.trim())) {
+                alert('Email must be a valid email address!');
+                return false;
+                }
+
+                if (isEmpty(document.getElementById('data_6').value.trim())) {
+                alert('Delivery Address is required!');
+                return false;
+                }
+                var data_6= document.getElementById("data_6").value.trim();
+                var data_7= document.getElementById("data_7").value.trim();
+                if(data_6 > data_7){
+                alert("Arrival date cannot be after Departure date");
+                return false;
+                }
+                
+                 return true;
+                }
+                function isEmpty(str) { return (str.length === 0 || !str.trim()); }
+                function validateEmail(email) {
+                var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
+                return isEmpty(email) || re.test(email);
+                }
+            
+                </script>
+                <style>
+                      #video-background {
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index:-1;
+}
+                </style>
+                  <body>
+                    <video autoplay muted loop id="video-background">
+                        <source src="https://www.shutterstock.com/shutterstock/videos/1102158541/preview/stock-footage-homemade-toast-bread-breakfast-appetizer-canape-european-breakfast-grilled-toast-bread-canape.webm">
+                    </video>
+                        </body>
+    </head> 
+    <center>
+    <form  method="post" action="successfull.html" onSubmit="return validation();">
+        <div style="max-width: 400px;">
+        </div>
+
+        <div style="padding-bottom: 18px;font-size : 24px;">Order Now</div>
+        <div style="display: flex; padding-bottom: 18px;max-width : 450px;">
+        <div style=" margin-left: 0; margin-right: 1%; width: 49%;">First name<span style="color: red;"> *</span><br/>
+        <input type="text" id="data_2" name="data_2" style="max-width: 100%;" class="form-control"/>
+        </div>
+
+        <div style=" margin-left: 1%; margin-right: 0; width: 49%;">Last name<span style="color: red;"> *</span><br/>
+        <input type="text" id="data_3" name="data_3" style="max-width: 100%;" class="form-control"/>
+        </div>
+
+        </div>
+        
+        <div style="padding-bottom: 18px;">Phone<span style="color: red;"> *</span><br/>
+        <input type="text" id="data_4" name="data_4" style="max-width : 450px;" class="form-control"/>
+        </div>
+
+        <div style="padding-bottom: 18px;">Email<span style="color: red;"> *</span><br/>
+        <input type="text" id="data_5" name="data_5" style="max-width : 450px;" class="form-control"/>
+        </div>
+
+        <div style="padding-bottom: 18px;">Items<span style="color: red;"> *</span><br/>
+            <select id="Items" name="items">
+            <option value="Items">Items</option>
+            <option value="Noodles">Noodles</option>
+            <option value="Rice">Rice</option>
+            <option value="Dumplings">Dumplings</option>
+            <option value="Pastry">Pastry</option>
+            <option value="Stews">Stews</option>
+            <option value="Soups">Soups</option>
+            <option value="BBQs">BBQs</option>
+            <option value="Sushis">Sushis</option>
+            <option value="Bentos">Bentos</option>
+            <option value="Hotpots">Hotpots</option>
+            <option value="Pickles">Pickles</option>
+        </select>
+        <select id="Items" name="items">
+            <option value="Items">Items</option>
+            <option value="Noodles">Noodles</option>
+            <option value="Rice">Rice</option>
+            <option value="Dumplings">Dumplings</option>
+            <option value="Pastry">Pastry</option>
+            <option value="Stews">Stews</option>
+            <option value="Soups">Soups</option>
+            <option value="BBQs">BBQs</option>
+            <option value="Sushis">Sushis</option>
+            <option value="Bentos">Bentos</option>
+            <option value="Hotpots">Hotpots</option>
+            <option value="Pickles">Pickles</option>
+        </select>
+        </div>
+        
+        <div style="padding-bottom: 18px;">Delivery Address<span style="color: red;"> *</span><br/>
+        <input type="text" id="data_6" name="data_6" style="max-width : 250px;" class="form-control" placeholder="Village" required>
+        <input type="text" id="data_6" name="data_6" style="max-width : 250px;" class="form-control" placeholder="Street" required>
+        <input type="text" id="data_6" name="data_6" style="max-width : 250px;" class="form-control" placeholder="D/No" required>
+        <input type="text" id="data_6" name="data_6" style="max-width : 250px;" class="form-control" placeholder="Pin.Code" required>
+        </div>
+
+        <div style="padding-bottom: 18px;"><input name="skip_Submit" value="Submit" type="submit"/></div>
+        <div>
+       
+        </form>
+        </center>
+</body>
+
+</html>

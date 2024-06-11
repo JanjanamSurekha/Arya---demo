@@ -1,0 +1,61 @@
+
+<html>
+    <head>
+        <title> javascript Function</title>
+        <body>
+            <script>
+                // user Validations
+                function loginValidation(){
+                    // Arya
+                    var uname = document.myform.Uname.value;
+                    //Arya@123
+                    var password = document.myform.password.value;
+                    if(uname==null || uname ==  ""){
+                        alert("Name cant be blank")
+                        return false;
+                    } else if(password.length<6){
+                        alert("password must be six letters")
+                        return false;
+                    }
+                    return true;
+                }
+
+                </script>
+                </head>
+                <style>
+                     #video-background {
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index:-1;
+}
+           h1{
+               text-align:center;
+           }
+               </style>
+            </body>
+            <body>
+                <video autoplay muted loop id="video-background">
+                    <source src="https://videos.pexels.com/video-files/4884239/4884239-sd_640_360_30fps.mp4">
+                </video>
+                    </body>
+                    <body text="green"></body>
+                <body>
+                    <div>
+                    <center>
+                    <h2> Login page</h2>
+                    <form name = "myform" action ="menu.html" onsubmit="return loginValidation(this)">
+            User Name : <input type = "text" name="Uname" placeholder="Name" required> <br>
+            Password : <input type = "password"  name="password" placeholder="Password" required> <br> <br>
+            <input type = "Submit" value="Submit">
+                    </form>
+                    <a href="Registration.html">Register Here</a>
+                    </center>
+                    </div>
+                </body>
+</html>
